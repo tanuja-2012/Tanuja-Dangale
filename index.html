@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Jackson Ford</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --sidebar-w: 300px;
+      --accent: #2ca6d8;
+      --muted: #8b96a6;
+      --bg: #ffffff;
+      --text: #111;
+      --max-width: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .wrap{
+      display:flex;
+      min-height:100vh;
+      max-width:var(--max-width);
+      margin:30px auto;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(20,20,30,0.08);
+      background: white;
+    }
+    .sidebar{
+      width:var(--sidebar-w);
+      background: #f5f7fa;
+      padding:40px 30px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+    }
+    .avatar{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(20,20,30,0.06);
+      flex:0 0 auto;
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .name{
+      font-weight:700;
+      font-size:20px;
+      margin-top:6px;
+      letter-spacing:0.1px;
+    }
+    .sub{
+      font-size:12px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:1.2px;
+      font-weight:600;
+    }
+    nav{
+      margin-top:18px;
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:12px;
+      padding-left:6px;
+    }
+    nav a{
+      color:#3c4b56;
+      text-decoration:none;
+      font-size:14px;
+      padding:6px 8px;
+      border-radius:4px;
+      display:inline-block;
+      width:100%;
+    }
+    nav a.active{ color:var(--accent); font-weight:600; background:transparent; box-shadow: inset 0 -2px 0 var(--accent); }
+    .sidebar .copyright{
+      margin-top:auto;
+      font-size:12px;
+      color:var(--muted);
+      text-align:center;
+      line-height:1.45;
+    }
+    .main{
+      flex:1;
+      position:relative;
+      padding:80px 80px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+    }
+    .hero-inner{
+      max-width:640px;
+    }
+    .eyebrow{
+      font-size:25px;
+      color:var(--muted);
+      margin-bottom:18px;
+      text-transform:uppercase;
+      letter-spacing:1.6px;
+      font-weight:1000;
+    }
+    h1{
+      font-family: "Playfair Display", serif;
+      font-weight:800;
+      font-size:72px;
+      line-height:0.95;
+      margin:0 0 18px 0;
+      letter-spacing:-1px;
+    }
+    p.lead{
+      color:var(--muted);
+      margin:0 0 28px 0;
+      font-size:16px;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:4px;
+      border:1px solid #d4dce3;
+      background:transparent;
+      text-decoration:none;
+      font-weight:600;
+      letter-spacing:0.6px;
+    }
+    .hero-photo{
+      position:absolute;
+      right:40px;
+      top:50%;
+      transform:translateY(-50%);
+      height:92%;
+      max-height:500px;
+      max-width:300px;
+      width:auto;
+      filter:grayscale(100%);
+      opacity:0.95;
+      pointer-events:none;
+    }
+    .hero-photo img{
+      height:100%;
+      display:block;
+      object-fit:cover;
+      border-radius:6px;
+    }
+    .pager{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:18px;
+      display:flex;
+      gap:8px;
+    }
+    .dot{width:9px;height:9px;border-radius:50%;background:#cfd7dd}
+    .dot.active{background:var(--accent)}
+    @media (max-width:980px){
+      .wrap{margin:12px}
+      .main{padding:40px}
+      h1{font-size:54px}
+      .hero-photo{right:18px;max-width:300px}
+    }
+    @media (max-width:720px){
+      .wrap{flex-direction:column}
+      .sidebar{width:100%;flex-direction:row;align-items:center;padding:16px;gap:14px}
+      nav{display:none}
+      .main{padding:28px}
+      .hero-photo{position:relative;transform:none;right:auto;top:auto;height:220px;width:100%;margin-top:20px;opacity:1;filter:none}
+      h1{font-size:36px}
+    }
+</style>
+</head>
+<body>
+   <div class="wrap" role="main" aria-label="Portfolio layout">
+    <aside class="sidebar" aria-label="Sidebar">
+      <div class="avatar" aria-hidden="true">
+        <img src="tanuja.jpg" alt="Jackson Ford photo">
+      </div>
+
+      <div class="name">Tanuja Dangale</div>
+      <div class="sub">Data Administrator in India</div>
+
+      <nav aria-label="Primary">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      
+    </aside>
+    <section class="main">
+      <div class="hero-inner">
+        <div class="eyebrow">Hi, I'm Tanuja</div>
+        <h1>Data<br> Administrator</h1>
+
+        <p class="lead">Changing peoples life with my work <br>
+            A data administrator is responsible for managing and processing<br> data within an organization.Their key responsibilities include:<br>
+Designing and setting up databases based on organizational<br> needs to ensure efficient data storage and access.
+1
+Ensuring<br> data security and safeguarding sensitive information to improve operational efficiency.
+1
+Processing data into a convenient model and<br>determining which data is relevant for storage. <br>
+<a href="#" style="color:var(--accent);text-decoration:none"></a></p>
+
+        <a class="cta" href="#portfolio">View Portfolio</a>
+      </div>
+      <div class="hero-photo" aria-hidden="true">
+        <img src="tanuja.jpg">
+      </div>
+
+      <div class="pager" aria-hidden="true">
+        <span class="dot"></span>
+        <span class="dot active"></span>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
